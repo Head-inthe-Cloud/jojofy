@@ -79,3 +79,10 @@ Network-blending result:
 ![blended_gif](images/blended.gif)
 
 
+## Resource
+
+- StyleGAN Network Blending: https://www.justinpinkney.com/stylegan-network-blending/
+- Toonify: https://toonify.photos/
+- Toonify on github: https://github.com/justinpinkney/toonify
+
+
