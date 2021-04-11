@@ -7,16 +7,16 @@ This is also a tutorial for those who are interested in training your own face o
 ## Process:
 ***
 ### Dataset Preperation:
-	1. Collect images
-	2. Crop them into square pictures at desired resolution (read sections below for details)
-	3. Turn images into tfrecord format
+- Collect images
+- Crop them into square pictures at desired resolution (read sections below for details)
+- Turn images into tfrecord format
 
 ### Transfer Training:
-	1. Find a pre-trained model (I used ffhq-256-config-e-003810.pkl from [Pinkney's repo](https://github.com/justinpinkney/awesome-pretrained-stylegan2))
-	2. Use transfer-training to train your model based on the pre-trained model
+- Find a pre-trained model (I used ffhq-256-config-e-003810.pkl from [Pinkney's repo](https://github.com/justinpinkney/awesome-pretrained-stylegan2))
+- Use transfer-training to train your model based on the pre-trained model
 
 ### Network Blending:
-	1. Use blend_models.py to blend your model with the pre-trained model. Check [Network blending](https://github.com/justinpinkney/toonify/blob/master/StyleGAN-blending-example.ipynb) for details.
+- Use blend_models.py to blend your model with the pre-trained model. Check [Network blending](https://github.com/justinpinkney/toonify/blob/master/StyleGAN-blending-example.ipynb) for details.
 
 ## Datasets
 
