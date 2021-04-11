@@ -7,16 +7,16 @@ This is also a tutorial for those who are interested in training your own face o
 ## Process:
 ***
 ### Dataset Preperation:
-- Collect images
-- Crop them into square pictures at desired resolution (read sections below for details)
-- Turn images into tfrecord format
+	1. Collect images
+	2. Crop them into square pictures at desired resolution (read sections below for details)
+	3. Turn images into tfrecord format
 
 ### Transfer Training:
-- Find a pre-trained model (I used ffhq-256-config-e-003810.pkl from [Pinkney's repo](https://github.com/justinpinkney/awesome-pretrained-stylegan2))
-- Use transfer-training to train your model based on the pre-trained model
+	1. Find a pre-trained model (I used ffhq-256-config-e-003810.pkl from [Pinkney's repo](https://github.com/justinpinkney/awesome-pretrained-stylegan2))
+	2. Use transfer-training to train your model based on the pre-trained model
 
 ### Network Blending:
-- Use blend_models.py to blend your model with the pre-trained model. Check [Network blending](https://github.com/justinpinkney/toonify/blob/master/StyleGAN-blending-example.ipynb) for details.
+	1. Use blend_models.py to blend your model with the pre-trained model. Check [Network blending](https://github.com/justinpinkney/toonify/blob/master/StyleGAN-blending-example.ipynb) for details.
 
 ## Datasets
 
@@ -24,6 +24,7 @@ Datasets used for jojofy:
 
 ### Hand-picked Jojo faces
 156 hand-picked and cropped jojo faces at 256x256 rosolution. Can be found in the images folder.
+
 ![jojo_256_images](images/reals.png)
 
 ## Dataset proportaion
@@ -68,6 +69,10 @@ python blend_models.py Low_Res.pkl High_Res.pkl 128 --output-grid=../blended_pkl
 
 ## Results
 
+Transfer training result:
 ![grid_gif](images/grid.gif)
+
+Network-blending result:
+![blended_gif](images/blended.gif)
 
 
