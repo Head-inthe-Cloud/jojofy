@@ -1,0 +1,53 @@
+
+Changing python version:
+alias python=python3
+
+Cuda setup:
+
+source ~/.bashrc
+
+export PATH=$PATH:/usr/local/cuda-10.0/bin
+export CUDADIR=/usr/local/cuda-10.0
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.0/lib64
+
+
+Pictures to tfrecord:
+python dataset_tool.py create_from_images ../data/jojo_256_tfrecord ../data/jojo_256
+
+Pictures to grid:
+image-grid -f ../../stylegan2_1/results/00011-generate-images/ -n 9 -o image-grid22.png
+https://pypi.org/project/image-grid/
+
+Pictures to gif:
+https://ezgif.com/maker/ezgif-2-e6b0e064-gif
+
+
+
+Training on existing models
+	https://towardsdatascience.com/stylegan-v2-notes-on-training-and-latent-space-exploration-e51cf96584b3
+
+
+Transfer Learning:
+python run_training.py --num-gpus=1 --config=config-e --data-dir=../data/ --dataset=high_res_jojo_tfrecord --total-kimg=10 --result-dir=../transfer_training_pkls/ --resume-pkl=../transfer_training_pkls/00006-stylegan2-high_res_jojo_tfrecord-1gpu-config-e/network-final.pkl
+
+Generate results:
+python run_generator.py generate-images --truncation-psi=1.0 --seeds=66,230,389,1518 --network=../transfer_training_pkls/00007-stylegan2-high_res_jojo_tfrecord-1gpu-config-e/network-final.pkl
+
+Project images:
+python run_projector.py project-real-images --network=../transfer_training_pkls/00007-stylegan2-high_res_jojo_tfrecord-1gpu-config-e/network-final.pkl --dataset=my_pics_tfrecord --data-dir=../data/
+
+Blending modles:
+python blend_models.py ../transfer_training_pkls/00016-stylegan2-high_res_jojo_tfrecord-1gpu-config-e/network-final.pkl ../ffhq-256-config-e-003810.pkl 128 --output-grid=../blended_pkls/"blended_128.jpg" --output-pkl=../blended_pkls/"blended_128.pkl"
+
+
+
+Allocating GPU Memory with tensorflow:
+https://riptutorial.com/tensorflow/example/31879/control-the-gpu-memory-allocation
+
+StyleGan2:
+https://github.com/NVlabs/stylegan2
+
+Network blending:
+https://www.justinpinkney.com/stylegan-network-blending/
+
+
