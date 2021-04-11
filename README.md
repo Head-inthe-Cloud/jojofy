@@ -23,9 +23,12 @@ This is also a tutorial for those who are interested in training your own face o
 Datasets used for jojofy:
 
 ### Hand-picked Jojo faces
-156 hand-picked and cropped jojo faces at 256x256 rosolution. Can be found in the images folder.
+
+156 hand-picked and cropped jojo faces at 256x256 rosolution. The data can be found [Here](https://drive.google.com/drive/folders/1l1LuLAgrbXblWbSDwuATyG6I0ut4eNqm?usp=sharing).
 
 ![jojo_256_images](images/reals.png)
+
+I apologize for the bad quality of these data. There are not that many sources for this data online and I had limited time, but there will be improvement in the future.
 
 ## Dataset proportaion
 ### Collect images you want.
